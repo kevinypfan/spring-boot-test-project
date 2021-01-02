@@ -2,6 +2,7 @@ package com.test.controller;
 
 import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Template;
+import com.test.service.EmailTemplateService;
 import io.rocketbase.mail.EmailTemplateBuilder;
 import io.rocketbase.mail.config.TbConfiguration;
 import io.rocketbase.mail.model.HtmlTextEmail;
@@ -18,6 +19,14 @@ import java.util.Map;
 @RestController
 public class EmailController {
 
+    @Autowired
+    private EmailTemplateService emailTemplateService;
+
+    @GetMapping("/test")
+    public String test() {
+        HtmlTextEmail htmlTextEmail = emailTemplateService.loginNotify();
+        return htmlTextEmail.getHtml();
+    }
 
     @GetMapping("/template")
     public String template() throws IOException {

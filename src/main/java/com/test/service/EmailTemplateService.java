@@ -13,7 +13,6 @@ public class EmailTemplateService {
     public HtmlTextEmail signupVerifyNotify() {
         HtmlTextEmail htmlTextEmail = EmailTemplateBuilder.builder()
                 .header()
-                .logo("{{logoImage}}").logoHeight(30)
                 .and()
                 .text("{{subject}}").h1().center().and()
                 .text("親愛的 {{legalName}} 您好：").h2().and()
@@ -24,8 +23,6 @@ public class EmailTemplateService {
                 .html("若是上述驗證功能連結失效：請直接前往下列網址，完成註冊 <a href=\"{{verifyLink}}\">{{verifyLink}}</a>",
                         "若是上述驗證功能連結失效：請直接前往下列網址，完成註冊 {{verifyLink}}").and()
                 .copyright("傑嶶科技").url("https://www.jway.com.tw/").suffix(". All rights reserved.").and()
-                .footerText("[公司名稱, {{companyName}}]\n" +
-                        "{{companyAddress}}").and()
                 .build();
 
         return htmlTextEmail;
@@ -36,15 +33,12 @@ public class EmailTemplateService {
     public HtmlTextEmail signupNotify() {
         HtmlTextEmail htmlTextEmail = EmailTemplateBuilder.builder()
                 .header()
-                .logo("{{logoImage}}").logoHeight(30)
                 .and()
                 .text("{{subject}}").h1().center().and()
                 .text("親愛的 {{legalName}} 您好：").h2().and()
                 .text("您註冊的會員帳號為：{{username}}").and()
                 .text("請以此作為登入帳號，日後將以此信箱與您聯絡。").and()
                 .copyright("傑嶶科技").url("https://www.jway.com.tw/").suffix(". All rights reserved.").and()
-                .footerText("[公司名稱, {{companyName}}]\n" +
-                        "{{companyAddress}}").and()
                 .build();
 
         return htmlTextEmail;
@@ -84,7 +78,6 @@ public class EmailTemplateService {
     public HtmlTextEmail forgotPasswordRequest() {
         HtmlTextEmail htmlTextEmail = EmailTemplateBuilder.builder()
                 .header()
-                .logo("{{logoImage}}").logoHeight(30)
                 .and()
                 .text("{{subject}}").h1().center().and()
                 .text("親愛的 {{legalName}} 您好：").h2().and()
@@ -99,8 +92,6 @@ public class EmailTemplateService {
                         "\n" +
                         "除非您訪問上面的鏈接並創建一個新密碼，否則您的密碼不會更改。").and()
                 .copyright("傑嶶科技").url("https://www.jway.com.tw/").suffix(". All rights reserved.").and()
-                .footerText("[公司名稱, {{companyName}}]\n" +
-                        "{{companyAddress}}").and()
                 .build();
 
         return htmlTextEmail;
@@ -109,14 +100,11 @@ public class EmailTemplateService {
     public HtmlTextEmail updatePasswordNotify() {
         HtmlTextEmail htmlTextEmail = EmailTemplateBuilder.builder()
                 .header()
-                .logo("{{logoImage}}").logoHeight(30)
                 .and()
                 .text("{{subject}}").h1().center().and()
                 .text("親愛的 {{legalName}} 您好：").h2().and()
                 .text("您的密碼已成功更改。").and()
                 .copyright("傑嶶科技").url("https://www.jway.com.tw/").suffix(". All rights reserved.").and()
-                .footerText("[公司名稱, {{companyName}}]\n" +
-                        "{{companyAddress}}").and()
                 .build();
 
         return htmlTextEmail;
@@ -125,14 +113,11 @@ public class EmailTemplateService {
     public HtmlTextEmail memberLockNotify() {
         HtmlTextEmail htmlTextEmail = EmailTemplateBuilder.builder()
                 .header()
-                .logo("{{logoImage}}").logoHeight(30)
                 .and()
                 .text("{{subject}}").h1().center().and()
                 .text("親愛的 {{legalName}} 您好：").h2().and()
                 .text("您的帳號已鎖定，請聯絡管理員協助解鎖。").and()
                 .copyright("傑嶶科技").url("https://www.jway.com.tw/").suffix(". All rights reserved.").and()
-                .footerText("[公司名稱, {{companyName}}]\n" +
-                        "{{companyAddress}}").and()
                 .build();
 
         return htmlTextEmail;
@@ -141,15 +126,12 @@ public class EmailTemplateService {
     public HtmlTextEmail memberActiveNotify() {
         HtmlTextEmail htmlTextEmail = EmailTemplateBuilder.builder()
                 .header()
-                .logo("{{logoImage}}").logoHeight(30)
                 .and()
                 .text("{{subject}}").h1().center().and()
                 .text("親愛的 {{legalName}} 您好：").h2().and()
                 .text("您的會員帳號為：{{username}}").and()
                 .text("帳號已重新啟用，您可以繼續使用此帳號。").and()
                 .copyright("傑嶶科技").url("https://www.jway.com.tw/").suffix(". All rights reserved.").and()
-                .footerText("[公司名稱, {{companyName}}]\n" +
-                        "{{companyAddress}}").and()
                 .build();
 
         return htmlTextEmail;
@@ -158,7 +140,6 @@ public class EmailTemplateService {
     public HtmlTextEmail approvalNotify() {
         HtmlTextEmail htmlTextEmail = EmailTemplateBuilder.builder()
                 .header()
-                .logo("{{logoImage}}").logoHeight(30)
                 .and()
                 .text("{{subject}}").h1().center().and()
                 .text("感謝您對本公司的愛待，此為問題結案通知。").h2().and()
@@ -167,8 +148,6 @@ public class EmailTemplateService {
                 .text("問題主旨：{{title}}").and()
                 .text("詳細描述：{{closedContent}}").and()
                 .copyright("傑嶶科技").url("https://www.jway.com.tw/").suffix(". All rights reserved.").and()
-                .footerText("[公司名稱, {{companyName}}]\n" +
-                        "{{companyAddress}}").and()
                 .build();
 
         return htmlTextEmail;
@@ -177,7 +156,6 @@ public class EmailTemplateService {
     public HtmlTextEmail maintenanceNotify() {
         HtmlTextEmail htmlTextEmail = EmailTemplateBuilder.builder()
                 .header()
-                .logo("{{logoImage}}").logoHeight(30)
                 .and()
                 .text("{{subject}}").h1().center().and()
                 .text("感謝您對本公司的愛待，此為問題報修通知。").h2().and()
@@ -186,8 +164,6 @@ public class EmailTemplateService {
                 .text("問題主旨：{{title}}").and()
                 .text("詳細描述：{{closedContent}}").and()
                 .copyright("傑嶶科技").url("https://www.jway.com.tw/").suffix(". All rights reserved.").and()
-                .footerText("[公司名稱, {{companyName}}]\n" +
-                        "{{companyAddress}}").and()
                 .build();
 
         return htmlTextEmail;
