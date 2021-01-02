@@ -166,7 +166,25 @@ public class EmailTemplateService {
                 .text("客戶名稱：{{legalName}}").and()
                 .text("問題主旨：{{title}}").and()
                 .text("詳細描述：{{closedContent}}").and()
-                .text("帳號已重新啟用，您可以繼續使用此帳號。").and()
+                .copyright("傑嶶科技").url("https://www.jway.com.tw/").suffix(". All rights reserved.").and()
+                .footerText("[公司名稱, {{companyName}}]\n" +
+                        "{{companyAddress}}").and()
+                .build();
+
+        return htmlTextEmail;
+    }
+
+    public HtmlTextEmail maintenanceNotify() {
+        HtmlTextEmail htmlTextEmail = EmailTemplateBuilder.builder()
+                .header()
+                .logo("{{logoImage}}").logoHeight(30)
+                .and()
+                .text("{{subject}}").h1().center().and()
+                .text("感謝您對本公司的愛待，此為問題報修通知。").h2().and()
+                .text("案件編號：{{idTickets}}").and()
+                .text("客戶名稱：{{legalName}}").and()
+                .text("問題主旨：{{title}}").and()
+                .text("詳細描述：{{closedContent}}").and()
                 .copyright("傑嶶科技").url("https://www.jway.com.tw/").suffix(". All rights reserved.").and()
                 .footerText("[公司名稱, {{companyName}}]\n" +
                         "{{companyAddress}}").and()
